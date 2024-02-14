@@ -1,7 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
-app = Flask(__name__)
 import random
+import requests
+app = Flask(__name__)
 
 @app.route("/")
 def home():
@@ -34,6 +35,17 @@ def home():
 def mypage():
     return "This is My Page!"
 
+@app.route("/movie")
+def movie():
+    query = request.args.get('query') # 검색어
+    URL = f"http://kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=f5eef3421c602c6cb7ea224104795888&movieNm={query}" # URL
+
+    res = requests.get(URL)
+    rjson = res.json()
+    movie_list = rjson["movieListResult"]["movieList"]
+		
+    return render_template("movie.html", data=movie_list)
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
