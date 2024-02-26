@@ -19,6 +19,11 @@ import random
 # computer = random.choice(rps)
 # print(f'사용자 : {user}, 컴퓨터 : {computer}')
 
+# 게임의 승, 패, 무승부 횟수를 기록. 승/패/비김
+count_win = 0
+count_lose = 0
+count_tie = 0
+
 while True:    
     # replay = input('다시 하시겠습니까? (y/n) : ')
     # if replay != 'y':
@@ -27,8 +32,8 @@ while True:
     # 무한반복이 안되려면 중간에 사용자가 선택한 값이나 컴퓨터가 선택한 값이 바뀌어야 한다.
     # continue가 없으면 if문이 끝난 지점으로 이동, continue가 있으면 다시 반복문으로(28번째줄) 와서 돌기 시작
 
-    # 플레이어나 컴퓨터가 이기거나 질경우 게임 종료
-    # 비길경우 게임 계속
+    # 플레이어가 이길 경우 게임 종료
+    # 비기거나 질경우 게임 계속
     while True:
         # 사용자 선택
         user = input('가위, 바위, 보 중 하나를 선택하세요 : ').upper()   #input.upper(내용)이 아닌 input(내용).upper()
@@ -39,11 +44,6 @@ while True:
         # computer = '보'
         print(f'사용자 : {user}, 컴퓨터 : {computer}')
 
-        # 게임의 승, 패, 무승부 횟수를 기록. 승/패/비김
-        count_win = []
-        count_lose = []
-        count_tie = []
-
         if user == computer:
             print('비겼습니다')
             count_tie += 1
@@ -51,19 +51,19 @@ while True:
         elif (user == '가위' and computer == '바위') or (user == '바위' and computer == '보') or (user == '보' and computer == '가위'):
             print('졌습니다')
             count_lose += 1
-            break
+            continue
         else:
             print('이겼습니다')
             count_win += 1
             break
-        ### continue가 없으면 비겼습니다가 옴
 
     replay = input('다시 하시겠습니까? (y/n) : ')
     if replay != 'y':
         break
 
-    # if replay == 'n':
-    #     print(f'승: {count_win}, 패: {count_lose}, 무승부: {count_tie}')
+if replay == 'n':
+    print('게임을 종료합니다.')
+    print(f'승: {count_win}, 패: {count_lose}, 무승부: {count_tie}')
 
 '''
 플레어어나 컴퓨터가 이기거나 질경우 게임 종료, 비길경우 게임 계속 유지
