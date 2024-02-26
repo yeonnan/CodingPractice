@@ -16,11 +16,12 @@ def computer_random_number():
         player_input = int(input('숫자를 입력하세요 : '))
         count += 1   # 플레이어가 한번 시도할때마다 횟수 +1
 
+        # 유효범위 벗어날 경우 알림
         if player_input < 1 or player_input > 100:
             print('1~100사이의 숫자를 입력해 주세요.')
 
-        if player_input < random_number:
-              print('업⬆️')
+        elif player_input < random_number:
+            print('업⬆️')
         elif player_input > random_number:
             print('다운⬇️')
         else:
@@ -29,6 +30,9 @@ def computer_random_number():
             break
 
 computer_random_number()
+
+# try
+#     except
 
 
 '''
