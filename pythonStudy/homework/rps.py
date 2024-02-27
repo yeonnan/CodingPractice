@@ -12,13 +12,15 @@ while True:
     # 플레이어가 이길 경우 게임 종료
     # 비기거나 질경우 게임 계속
     while True:
-        # 사용자 선택
         user = input('가위, 바위, 보 중 하나를 선택하세요 : ').upper()   #input.upper(내용)이 아닌 input(내용).upper()
-        
-        # 컴퓨터 선택
         rps = ['가위', '바위', '보']
+
+        # 사용자의 입력값이 올바른지 확인
+        if user not in rps:
+            print('가위, 바위, 보 중에서 입력해주세요.')
+            continue
+
         computer = random.choice(rps)
-        # computer = '보'
         print(f'사용자 : {user}, 컴퓨터 : {computer}')
 
         if user == computer:
@@ -29,11 +31,6 @@ while True:
             print('졌습니다')
             count_lose += 1
             continue
-
-        elif user == '가위' or user == '바위' or user == '보':
-            print('가위, 바위, 보 중에서 입력해주세요')
-            continue
-        
         else:
             print('이겼습니다')
             count_win += 1
