@@ -29,6 +29,11 @@ while True:
             print('졌습니다')
             count_lose += 1
             continue
+
+        elif user == '가위' or user == '바위' or user == '보':
+            print('가위, 바위, 보 중에서 입력해주세요')
+            continue
+        
         else:
             print('이겼습니다')
             count_win += 1
