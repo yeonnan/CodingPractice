@@ -29,3 +29,11 @@ map, int, input, split을 한번에 사용하는것이 어려웠다.
 2. map(int, input().split())는 split() 함수로 분리된 각 문자열을 int() 함수를 통해 정수로 변환한다.
 3. list(map(int, input().split()))는 map() 함수의 결과를 실제 리스트로 변환한다.
 '''
+
+T = int(input())
+num = list(map(int, input().split()))
+num.sort()	# 오름차순
+division = T//2
+result = num[division]
+
+print(result)
