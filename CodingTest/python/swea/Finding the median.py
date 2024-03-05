@@ -21,3 +21,9 @@ N이 9 이고, 9개의 점수가 아래와 같이 주어질 경우,
 N 개의 점수들 중, 중간값에 해당하는 점수를 정답으로 출력한다.
 '''
 
+T = int(input())
+num = list(map(int, input().split()))
+num.sort()    # 오름차순
+division = T//2
+result = num[division]
+print(result)
