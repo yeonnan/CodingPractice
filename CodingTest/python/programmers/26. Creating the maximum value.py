@@ -22,3 +22,6 @@ numbers	result
 def solution(numbers):
     numbers.sort()
     return numbers[-1] * numbers[-2]
+
+list[0] # 리스트의 첫번째 값
+list[-1] # 리스트의 마지막 값
