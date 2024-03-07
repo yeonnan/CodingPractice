@@ -35,27 +35,38 @@ for member in members:
     1. for 문을 돌면서 특정유저가 작성한 게시글의 제목을 모두 프린트 해주세요
     2. for문을 돌면서 ‘특정 단어’가 content에 포함된 게시글의 제목을 모두 프린트 해주세요
 '''
+        
+post_contents = [
+    {'title' : '버거킹', 'content' : '햄버거의 왕께서 만드신 버거', 'author' : member1},
+    {'title' : '허니버터칩', 'content' : '한때 품절 대란 과자', 'author' : member1},
+    {'title' : '신라면', 'content' : '제일 무난하게 맛있어요 라면', 'author' : member1},
+    {'title' : '오트밀', 'content' : '인간사료 과자', 'author' : member2},
+    {'title' : '불닭볶음면', 'content' : '먹을때는 행복하지만.. 라면', 'author' : member2},
+    {'title' : '맥도날드', 'content' : '맥도날드씨가 만드신 희대의 역!작! 이 햄버거', 'author' : member2},
+    {'title' : '무파마', 'content' : '마늘 더 넣으면 맛있어요 라면', 'author' : member3},
+    {'title' : '맘스터치', 'content' : "어머니께서 직접 만드신 고향의 맛 '그' 햄버거", 'author' : member3},
+    {'title' : '포카칩', 'content' : '감 자 칩 과자', 'author' : member3}
+]
+
 posts = []
 
-author1 = Post('버거킹', '햄버거의 왕께서 만드신 버거', member1)
-author2 = Post('허니버터칩', '한때 품절 대란', member1)
-author3 = Post('신라면', '제일 무난하게 맛있어요', member1)
-author4 = Post('오트밀', '인간사료', member2)
-author5 = Post('불닭볶음면', '먹을때는 행복하지만..', member2)
-author6 = Post('맥도날드', '맥도날드씨가 만드신 희대의 역!작! 이 햄버거', member2)
-auhtor7 = Post('무파마', '마늘 더 넣으면 맛있어요', member3)
-author8 = Post('맘스터치', "어머니께서 직접 만드신 고향의 맛 '그' 햄버거", member3)
-author9 = Post('포카칩', '감 자 칩', member3)
-
-posts.append(author1)
-posts.append(author2)
-posts.append(author3)
-posts.append(author4)
-posts.append(author5)
-posts.append(author6)
-posts.append(auhtor7)
-posts.append(author8)
-posts.append(author9)
-
+for post_content in post_contents:
+    posts.append(
+        Post(
+            post_content['title'],
+            post_content['content'],
+            post_content['author'].name
+        )
+    )
+    
+# 특정 '유저'가 작성한 게시글의 '제목' 프린트
 for post in posts:
-    print(f'')
+    if post.author == '이창섭':
+        print(post.title)
+        
+# ‘특정 단어’가 content에 포함된 게시글의 '제목'을 모두 프린트
+# ex) 햄버거, 라면, 과자
+word_search = input('검색하고자 하는 단어를 적어주세요 : ')
+for post in posts:
+    if word_search in post.content:
+        print(post.title)
