@@ -6,3 +6,4 @@ return the minimum cost to reach the top of the floor.
 계단을 오를때 일정 비용 발생, 그걸 최소화하면서 오르기
 시작점은 0번째나 1번째로 선택 가능, 한번에 1개, 2개 오르기 가능
 '''
+
