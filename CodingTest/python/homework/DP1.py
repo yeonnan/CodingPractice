@@ -10,4 +10,13 @@ in how many distinct ways can you climb to the top?
 
 class Solution:
     def climb_stairs(self, n: int) -> int:
-        
+        if n == 1:
+            return 1
+        elif n == 2:
+            return 2
+        else:
+            return self.climb_stairs(n-1) + self.climb_stairs(n-2)
+
+solution = Solution()
+result = solution.climb_stairs(2)
+print(result)
