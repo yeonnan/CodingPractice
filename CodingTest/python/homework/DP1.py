@@ -10,13 +10,21 @@ in how many distinct ways can you climb to the top?
 
 class Solution:
     def climb_stairs(self, n: int) -> int:
-        if n == 1:
-            return 1
-        elif n == 2:
-            return 2
-        else:
-            return self.climb_stairs(n-1) + self.climb_stairs(n-2)
+        if n <= 2:
+            return n
+        
+        # 첫 번째와 두 번째 단계의 초기값 설정
+        first, second = 1, 2
+        
+        for i in range(3, n+1):
+            # 현재 단계에서의 방법의 수는 이전 두 단계의 합
+            third = first + second
+            # 다음 단계 계산을 위해 값 업데이트
+            first, second = second, third
+        
+        # n번째 단계에서의 방법의 수 반환
+        return second
 
 solution = Solution()
-result = solution.climb_stairs(2)
+result = solution.climb_stairs(3)
 print(result)
