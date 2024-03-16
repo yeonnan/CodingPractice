@@ -13,6 +13,11 @@
 #   7	      3	     2333
 #   1	      16	  62
 
-def solution(num1, num2):
-    answer = int(num1/num2 * 1000)
-    return answer
+# def solution(num1, num2):
+#     answer = int(num1/num2 * 1000)
+#     return answer
+
+num1, num2 = map(int, input().split())
+def soltuion(num1, num2):
+    print(int(num1 / num2 * 1000))
+soltuion(num1, num2)

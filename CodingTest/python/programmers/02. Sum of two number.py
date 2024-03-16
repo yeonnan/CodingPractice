@@ -17,6 +17,11 @@
 # 입출력 예 #2
 # num1이 100이고 num2가 2이므로 100 + 2 = 102를 return합니다.
 
-def solution(num1, num2):
-    answer = num1 + num2
-    return answer
+# def solution(num1, num2):
+#     answer = num1 + num2
+#     return answer
+
+num1, num2 = map(int, input().split())
+def soltuion(num1, num2):
+    print(num1+num2)
+soltuion(num1, num2)
