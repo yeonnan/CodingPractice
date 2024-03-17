@@ -21,8 +21,16 @@
 # 입출력 예 설명 #3
 # num1이 7이고 num2가 99이므로 다릅니다. 따라서 -1을 return합니다.
 
+# def solution(num1, num2):
+#     if num1 == num2:
+#         return 1
+#     else:
+#         return -1
+
+num1, num2 = map(int, input().split())
 def solution(num1, num2):
     if num1 == num2:
-        return 1
+        print(1)
     else:
-        return -1
+        print(-1)
+solution(num1, num2)

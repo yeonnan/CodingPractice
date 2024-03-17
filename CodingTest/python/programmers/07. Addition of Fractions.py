@@ -17,11 +17,23 @@
 # 입출력 예 #2
 # 9 / 2 + 1 / 3 = 29 / 6입니다. 따라서 [29, 6]을 return 합니다.
 
+# import math 
+
+# def solution(numer1, denom1, numer2, denom2):
+#     denom = denom1 * denom2
+#     numer = denom1 * numer2 + denom2 * numer1
+#     gcd = math.gcd(denom, numer)
+#     answer = [numer // gcd, denom // gcd]
+#     return answer
+
 import math 
 
+numer1, denom1, numer2, denom2 = map(int, input().split())
 def solution(numer1, denom1, numer2, denom2):
-    denom = denom1 * denom2
-    numer = denom1 * numer2 + denom2 * numer1
+    denom = denom1*denom2
+    numer = denom1*numer2+denom2*numer1
     gcd = math.gcd(denom, numer)
     answer = [numer // gcd, denom // gcd]
-    return answer
+
+    print(answer)
+solution(numer1, denom1, numer2, denom2)

@@ -17,6 +17,11 @@
 # 입출력 예 #2
 # num1이 27, num2가 19이므로 27 * 19 = 513을 return합니다.
 
+# def solution(num1, num2):
+#     answer = num1 * num2
+#     return answer
+
+num1, num2 = map(int, input().split())
 def solution(num1, num2):
-    answer = num1 * num2
-    return answer
+    print(num1*num2)
+solution(num1,num2)

@@ -17,6 +17,11 @@
 # 입출력 예 #2
 # num1이 7, num2가 2이므로 7을 2로 나눈 몫 3을 return 합니다.
 
+# def solution(num1, num2):
+#     answer = num1 // num2
+#     return answer
+
+num1, num2 = map(int, input().split())
 def solution(num1, num2):
-    answer = num1 // num2
-    return answer
+    print(num1 // num2)
+solution(num1, num2)
